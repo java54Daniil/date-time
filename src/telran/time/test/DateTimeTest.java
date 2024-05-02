@@ -25,11 +25,17 @@ class DateTimeTest {
 		//TODO
 	}
 	@Test
-	void zonedDateTimeTest() {
-		var availableTimeZones = ZoneId.getAvailableZoneIds();
-		for(String zone :availableTimeZones) {
-			System.out.println(zone);
-		}
+	void displayCurrentDateTimeTest() {
+		//The following test implies printing out 
+		//all current date/time in Time Zones containing string Canada
+		displayCurrentDateTime("Canada");
+	}
+	private void displayCurrentDateTime(String zonePart) {
+		//TODO
+		//format <year>-<month number>-<day>-<hh:mm>-<zone name>
+		//prints out current date/time in all zones containing zonePart
+		//ZonedDateTime class
+		System.out.println("kuku");
 	}
 
 }
