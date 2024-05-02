@@ -1,8 +1,7 @@
 package telran.time.test;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
+import java.time.*;
+import java.time.temporal.ChronoUnit;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,11 +9,11 @@ class DateTimeTest {
 
 	@Test
 	void introductionTest() {
-		LocalDate birthDateAS = LocalDate.of(1799,6, 6);
-		System.out.printf("birthdate of ASP in standart format is %s\n",birthDateAS);
-		System.out.printf("birthdate of ASP in <Month>,<year><day> <day of week> is %s\n",
-				birthDateAS.format(DateTimeFormatter.ofPattern("MMMM,d yyyy EEEE",
-						Locale.forLanguageTag("ru"))));
+		LocalDateTime d1 = LocalDateTime.parse("1990-01-30T00:00:00");
+		LocalDateTime d2 = LocalDateTime.parse("2000-10-20T00:00:00");
+		ChronoUnit unit = ChronoUnit.SECONDS;
+		System.out.printf("differnce between %s and %s in %s is %d",
+				d2,d1,unit,unit.between(d2, d1));
 	}
 
 }
